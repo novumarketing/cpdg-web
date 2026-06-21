@@ -22,7 +22,7 @@ export default function TopBar() {
           </a>
         </div>
         <div className="flex items-center gap-3">
-          <span>SÃ­guenos</span>
+          <span>Síguenos</span>
           {SOCIALS.filter((s) => BRAND[s.key]).map((s) => {
             const Icon = BRAND[s.key];
             return (
