@@ -5,7 +5,7 @@ import LazyMap from "@/components/LazyMap";
 
 export const metadata: Metadata = {
   title: "Contacto",
-  description: "Encuentra el Colegio Pedro de Gante en Tulancingo. DirecciÃ³n, telÃ©fono y formulario de contacto.",
+  description: "Encuentra el Colegio Pedro de Gante en Tulancingo. Dirección, teléfono y formulario de contacto.",
 };
 
 function PhoneIcon() {
@@ -20,13 +20,13 @@ function MapPinIcon() {
 
 export default function Contacto() {
   return (
-    <main>
+    <section>
       <section style={{ padding:"clamp(3.5rem,7vw,6rem) 0 clamp(2rem,4vw,3rem)", background:"radial-gradient(70% 80% at 50% -10%, rgba(224,48,63,.07), transparent 60%), var(--color-bg)" }}>
         <div className="wrap text-center" style={{ maxWidth:680, marginLeft:"auto", marginRight:"auto" }}>
           <div className="flex justify-center"><span className="eyebrow">Contacto</span></div>
           <h1 className="font-display font-extrabold tracking-tight leading-[1.04] mt-[18px]"
             style={{ fontSize:"clamp(2.4rem,5.2vw,4rem)", color:"var(--text-strong)" }}>Hablemos</h1>
-          <p className="mt-[18px] mx-auto leading-relaxed" style={{ fontSize:"clamp(1.05rem,1.6vw,1.2rem)", color:"var(--text-muted)", maxWidth:"34em" }}>Estamos para resolver todas tus dudas. EscrÃ­benos, llÃ¡manos o visÃ­tanos en cualquiera de nuestras sedes.</p>
+          <p className="mt-[18px] mx-auto leading-relaxed" style={{ fontSize:"clamp(1.05rem,1.6vw,1.2rem)", color:"var(--text-muted)", maxWidth:"34em" }}>Estamos para resolver todas tus dudas. Escríbenos, llámanos o visítanos en cualquiera de nuestras sedes.</p>
         </div>
       </section>
 
@@ -34,22 +34,22 @@ export default function Contacto() {
       <section style={{ padding:"clamp(2.5rem,5vw,4.5rem) 0" }}>
         <div className="wrap grid gap-10 lg:grid-cols-[1fr_400px] items-start">
           {/* Form */}
-          <div className="rounded-[var(--radius-lg)] border p-8 shadow-xs"
-            style={{ background:"var(--surface-card)", borderColor:"var(--line-sm)" }}>
+          <div className="rounded-[var(--radius-lg)] border p-8 shadow-sm"
+            style={{ background:"var(--color-surface)", borderColor:"var(--ink-200)" }}>
             <span className="eyebrow mb-4 block">Formulario</span>
-            <h2 className="font-display font-bold mb-6" style={{ fontSize:"1.5rem", color:"var(--text-strong)" }}>EnvÃ­anos un mensaje</h2>
+            <h2 className="font-display font-bold mb-6" style={{ fontSize:"1.5rem", color:"var(--text-strong)" }}>Envíanos un mensaje</h2>
             <ContactForm />
           </div>
 
           {/* Contact info */}
           <aside className="flex flex-col gap-6">
-            <div className="rounded-[var(--radius-lg)] border p-7" style={{ background:"var(--surface-card)", borderColor:"var(--line-sm)" }}>
-              <span className="eyebrow mb-4 block">InformaciÃ³n de contacto</span>
+            <div className="rounded-[var(--radius-lg)] border p-7" style={{ background:"var(--color-surface)", borderColor:"var(--ink-200)" }}>
+              <span className="eyebrow mb-4 block">Información de contacto</span>
               <ul className="flex flex-col gap-5">
                 <li className="flex items-start gap-3.5">
                   <span className="grid h-9 w-9 place-items-center rounded-[var(--radius-sm)] shrink-0" style={{ background:"rgba(224,48,63,.1)", color:"var(--color-primary)" }}><PhoneIcon /></span>
                   <div>
-                    <div className="text-[11.5px] font-semibold uppercase tracking-wider mb-0.5" style={{ color:"var(--text-muted)" }}>TelÃ©fono</div>
+                    <div className="text-[11.5px] font-semibold uppercase tracking-wider mb-0.5" style={{ color:"var(--text-muted)" }}>Teléfono</div>
                     <a href={`tel:${PHONE.replace(/\s/g,"")}`} className="font-display font-semibold text-[1.05rem]" style={{ color:"var(--text-strong)" }}>{PHONE}</a>
                   </div>
                 </li>
@@ -64,14 +64,14 @@ export default function Contacto() {
                   <span className="grid h-9 w-9 place-items-center rounded-[var(--radius-sm)] shrink-0" style={{ background:"rgba(224,48,63,.1)", color:"var(--color-primary)" }}><MapPinIcon /></span>
                   <div>
                     <div className="text-[11.5px] font-semibold uppercase tracking-wider mb-0.5" style={{ color:"var(--text-muted)" }}>Horario</div>
-                    <p className="text-[15px] leading-[1.6]" style={{ color:"var(--text-body)" }}>Lun â Vie 8:00 â 15:00 hrs<br />SÃ¡b 9:00 â 12:00 hrs</p>
+                    <p className="text-[15px] leading-[1.6]" style={{ color:"var(--text-body)" }}>Lun – Vie 8:00 – 15:00 hrs<br />Sáb 9:00 – 12:00 hrs</p>
                   </div>
                 </li>
               </ul>
             </div>
 
             {/* Campuses */}
-            <div className="rounded-[var(--radius-lg)] border p-7 flex flex-col gap-5" style={{ background:"var(--surface-card)", borderColor:"var(--line-sm)" }}>
+            <div className="rounded-[var(--radius-lg)] border p-7 flex flex-col gap-5" style={{ background:"var(--color-surface)", borderColor:"var(--ink-200)" }}>
               <span className="eyebrow">Nuestras sedes</span>
               {CAMPUSES.map((c) => (
                 <div key={c.name}>
@@ -88,11 +88,11 @@ export default function Contacto() {
       {/* Map */}
       <section style={{ padding:"0 0 clamp(3rem,5vw,5rem)" }}>
         <div className="wrap">
-          <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-md border" style={{ borderColor:"var(--line-sm)" }}>
+          <div className="rounded-[var(--radius-lg)] overflow-hidden shadow-md border" style={{ borderColor:"var(--ink-200)" }}>
             <LazyMap />
           </div>
         </div>
       </section>
-    </main>
+    </section>
   );
 }
