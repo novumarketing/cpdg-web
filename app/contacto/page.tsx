@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PHONE, EMAIL, CAMPUSES } from "@/components/site";
+import { PHONE, EMAIL, CAMPUS } from "@/components/site";
 import ContactForm from "@/components/ContactForm";
 import LazyMap from "@/components/LazyMap";
 
@@ -70,14 +70,13 @@ export default function Contacto() {
               </ul>
             </div>
 
-            {/* Campuses */}
+            {/* Campus */}
             <div className="rounded-[var(--radius-lg)] border p-7 flex flex-col gap-5" style={{ background:"var(--color-surface)", borderColor:"var(--ink-200)" }}>
               <span className="eyebrow">Nuestras sedes</span>
-              {CAMPUSES.map((c) => (
-                <div key={c.name}>
-                  <div className="font-display font-bold mb-1" style={{ fontSize:".95rem", color:"var(--text-strong)" }}>{c.name}</div>
-                  <p className="text-[14px] leading-[1.55]" style={{ color:"var(--text-body)" }}>{c.address}</p>
-                  <p className="text-[13px] mt-0.5" style={{ color:"var(--text-muted)" }}>{c.levels}</p>
+              {CAMPUS.map((c) => (
+                <div key={c.nombre}>
+                  <div className="font-display font-bold mb-1" style={{ fontSize:".95rem", color:"var(--text-strong)" }}>{c.nombre}</div>
+                  <p className="text-[14px] leading-[1.55]" style={{ color:"var(--text-body)" }}>{c.dir}</p>
                 </div>
               ))}
             </div>
