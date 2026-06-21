@@ -21,11 +21,11 @@ export default function Footer() {
                 style={{ background:"linear-gradient(135deg,var(--red-600),var(--red-800))" }}>P</div>
               <div className="leading-tight">
                 <b className="block font-display text-[17px] font-bold text-white">Pedro de Gante</b>
-                <span className="text-[10px] uppercase tracking-[0.16em]" style={{ color:"var(--text-on-dark-muted)" }}>Colegio Â· Tulancingo</span>
+                <span className="text-[10px] uppercase tracking-[0.16em]" style={{ color:"var(--text-on-dark-muted)" }}>Colegio · Tulancingo</span>
               </div>
             </div>
             <p className="text-sm max-w-xs mb-[18px]" style={{ color:"var(--text-on-dark-muted)", lineHeight:1.6 }}>
-              Desarrollando talento para la vida. EducaciÃ³n con valores, de preescolar a preparatoria en Tulancingo, Hidalgo.
+              Desarrollando talento para la vida. Educación con valores, de preescolar a preparatoria en Tulancingo, Hidalgo.
             </p>
             <div className="flex gap-2.5">
               {SOCIALS.filter((s) => BRAND[s.key]).map((s) => {
@@ -42,7 +42,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="font-display text-[13px] font-bold uppercase tracking-[0.1em] text-white mb-4">NavegaciÃ³n</h4>
+            <h4 className="font-display text-[13px] font-bold uppercase tracking-[0.1em] text-white mb-4">Navegación</h4>
             <ul className="flex flex-col gap-2.5">
               {NAV.map((n) => (
                 <li key={n.href}><Link href={n.href} className="text-[14.5px] transition hover:text-white" style={{ color:"var(--text-on-dark-muted)" }}>{n.label}</Link></li>
@@ -66,7 +66,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center justify-between gap-2.5 pt-[22px] text-[13px]" style={{ color:"var(--text-faint)" }}>
-          <span>Â© {new Date().getFullYear()} Colegio Pedro de Gante. Todos los derechos reservados.</span>
+          <span>© {new Date().getFullYear()} Colegio Pedro de Gante. Todos los derechos reservados.</span>
           <div className="flex items-center gap-4">
             <Link href="/aviso-de-privacidad" className="transition hover:text-white">Aviso de Privacidad</Link>
             <span>Desarrollado por{" "}
