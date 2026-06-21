@@ -1,26 +1,28 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 export function SectionHead({ kicker, title, sub, center, light }:
-  { kicker: string; title: string; sub?: string; center?: boolean; light?: boolean }) {
+  { kicker?: string; title: ReactNode; sub?: string; center?: boolean; light?: boolean }) {
   return (
-    <div className={`mb-12 max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
-      <span className={light ? "kicker" : "kicker-ink"}>{kicker}</span>
-      <h2 className={`mt-3.5 font-display text-[clamp(28px,3.6vw,42px)] font-bold ${light ? "text-white" : "text-wine"}`}>{title}</h2>
-      {sub && <p className={`mt-3.5 text-[17px] ${light ? "text-[#e7d6cf]" : "text-muted"}`}>{sub}</p>}
+    <div className={`mb-11 max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
+      {kicker && <div className={center ? "flex justify-center" : ""}><span className="eyebrow">{kicker}</span></div>}
+      <h2 className="mt-4 font-display font-extrabold tracking-tight leading-[1.08]"
+        style={{ fontSize:"clamp(1.9rem,3.4vw,2.85rem)", color: light ? "#fff" : "var(--text-strong)" }}>{title}</h2>
+      {sub && <p className="mt-4 text-[1.05rem] leading-relaxed" style={{ color: light ? "var(--text-on-dark-muted)" : "var(--text-muted)" }}>{sub}</p>}
     </div>
   );
 }
 
-export function PageHero({ kicker, title, sub }: { kicker: string; title: ReactNode; sub: string }) {
+export function PageHero({ kicker, title, sub, children }:
+  { kicker: string; title: ReactNode; sub: string; children?: ReactNode }) {
   return (
-    <section className="relative overflow-hidden border-b border-line bg-gradient-to-b from-bg-2 to-white">
-      <div className="pointer-events-none absolute -right-32 -top-40 h-[420px] w-[420px] rounded-full bg-[#f0d9dd] opacity-50 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-44 -left-32 h-[360px] w-[360px] rounded-full bg-[#f4ecdd] opacity-60 blur-3xl" />
-      <div className="wrap relative z-10 py-16 text-center md:py-20">
-        <span className="kicker-ink">{kicker}</span>
-        <h1 className="mx-auto mt-4 max-w-3xl font-display text-[clamp(32px,4.6vw,52px)] font-extrabold leading-[1.1] text-wine">{title}</h1>
-        <p className="mx-auto mt-5 max-w-2xl text-lg text-muted">{sub}</p>
+    <section style={{ padding:"clamp(3rem,6vw,5rem) 0 clamp(2rem,4vw,3rem)", background:"radial-gradient(70% 80% at 50% -10%, rgba(224,48,63,.07), transparent 60%), var(--color-bg)" }}>
+      <div className="wrap text-center" style={{ maxWidth:780, marginLeft:"auto", marginRight:"auto" }}>
+        <div className="flex justify-center"><span className="eyebrow">{kicker}</span></div>
+        <h1 className="font-display font-extrabold tracking-tight leading-[1.04] mt-[18px]"
+          style={{ fontSize:"clamp(2.4rem,5.2vw,4rem)", color:"var(--text-strong)" }}>{title}</h1>
+        <p className="mt-[18px] mx-auto leading-relaxed"
+          style={{ fontSize:"clamp(1.05rem,1.6vw,1.25rem)", color:"var(--text-muted)", maxWidth:"38em" }}>{sub}</p>
+        {children}
       </div>
     </section>
   );
@@ -28,12 +30,12 @@ export function PageHero({ kicker, title, sub }: { kicker: string; title: ReactN
 
 export function StatsBar({ items }: { items: { n: string; l: string }[] }) {
   return (
-    <section className="bg-wine">
-      <div className="wrap grid grid-cols-2 gap-6 py-10 text-center md:grid-cols-4">
+    <section style={{ background:"var(--ink-900)" }}>
+      <div className="wrap flex flex-wrap items-center justify-between gap-7 py-[clamp(2rem,4vw,3rem)]">
         {items.map((s) => (
-          <div key={s.l}>
-            <div className="bg-gradient-to-r from-[#f0d9b6] to-gold bg-clip-text font-display text-[40px] font-extrabold text-transparent">{s.n}</div>
-            <div className="mt-1 text-[13.5px] text-[#e7d6cf]">{s.l}</div>
+          <div key={s.l} className="text-center">
+            <div className="font-display font-extrabold text-white" style={{ fontSize:"clamp(2rem,4vw,3rem)" }}>{s.n}</div>
+            <div className="mt-1 text-[14px]" style={{ color:"var(--text-on-dark-muted)" }}>{s.l}</div>
           </div>
         ))}
       </div>
@@ -41,15 +43,23 @@ export function StatsBar({ items }: { items: { n: string; l: string }[] }) {
   );
 }
 
-export function CtaBand({ title, sub, href, label }: { title: string; sub: string; href: string; label: string }) {
+export function CtaBand({ title, sub, href, label, secondaryLabel, secondaryHref }:
+  { title: string; sub: string; href: string; label: string; secondaryLabel?: string; secondaryHref?: string }) {
   return (
-    <section className="py-20">
-      <div className="wrap">
-        <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-br from-wine to-wine-2 px-8 py-16 text-center">
-          <div className="pointer-events-none absolute -right-16 -top-28 h-80 w-80 rounded-full bg-gold/25 blur-3xl" />
-          <h2 className="relative font-display text-[clamp(27px,3.8vw,38px)] font-bold text-white">{title}</h2>
-          <p className="relative mx-auto mt-3.5 max-w-xl text-[17px] text-[#e7d6cf]">{sub}</p>
-          <div className="relative mt-7"><a href={href} target="_blank" rel="noopener noreferrer" className="btn btn-gold">{label}</a></div>
+    <section style={{ position:"relative", overflow:"hidden", background:"linear-gradient(135deg,var(--red-600),var(--red-800))", color:"#fff" }}>
+      <div className="wrap relative text-center z-10" style={{ padding:"clamp(3.5rem,7vw,6rem) 0" }}>
+        <h2 className="font-display font-extrabold tracking-tight leading-[1.1] mt-3.5"
+          style={{ fontSize:"clamp(2rem,4vw,3rem)" }}>{title}</h2>
+        <p className="mx-auto mt-4 text-[1.1rem] leading-relaxed" style={{ color:"rgba(255,255,255,.88)", maxWidth:"36em" }}>{sub}</p>
+        <div className="flex flex-wrap justify-center gap-3.5 mt-7">
+          <a href={href} target="_blank" rel="noopener noreferrer" className="btn btn-lg"
+            style={{ background:"#fff", color:"var(--color-primary)", fontWeight:700 }}>{label}</a>
+          {secondaryLabel && secondaryHref && (
+            <a href={secondaryHref} className="btn btn-lg"
+              style={{ border:"1.5px solid rgba(255,255,255,.55)", color:"#fff", background:"transparent" }}>
+              {secondaryLabel}
+            </a>
+          )}
         </div>
       </div>
     </section>
