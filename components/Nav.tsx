@@ -35,7 +35,7 @@ export default function Nav() {
             style={{ background:"linear-gradient(135deg,var(--red-600),var(--red-800))", boxShadow:"0 6px 18px rgba(196,30,46,.35)" }}>P</div>
           <div className="leading-tight">
             <b className="block font-display text-[17px] font-bold" style={{ color:"var(--ink-900)" }}>Pedro de Gante</b>
-            <span className="text-[10px] uppercase tracking-[0.16em]" style={{ color:"var(--ink-500)" }}>Colegio Â· Tulancingo</span>
+            <span className="text-[10px] uppercase tracking-[0.16em]" style={{ color:"var(--ink-500)" }}>Colegio · Tulancingo</span>
           </div>
         </Link>
 
@@ -57,7 +57,7 @@ export default function Nav() {
           <WAIcon size={16} /> Informes
         </a>
 
-        <button aria-label="MenÃº" aria-expanded={open} onClick={() => setOpen(v => !v)} className="ml-auto lg:hidden" style={{ color:"var(--ink-900)" }}>
+        <button aria-label="Menú" aria-expanded={open} onClick={() => setOpen(v => !v)} className="ml-auto lg:hidden" style={{ color:"var(--ink-900)" }}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
