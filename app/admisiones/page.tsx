@@ -6,25 +6,25 @@ import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Admisiones",
-  description: "Proceso de admisiÃ³n al Colegio Pedro de Gante, Tulancingo. Inscripciones abiertas.",
+  description: "Proceso de admisión al Colegio Pedro de Gante, Tulancingo. Inscripciones abiertas.",
 };
 
 const PASOS = [
-  { n:1, title:"Solicita informaciÃ³n",     desc:"ContÃ¡ctanos por WhatsApp, telÃ©fono o correo para conocer disponibilidad de lugares y requisitos del nivel que te interesa." },
-  { n:2, title:"Agenda una visita",         desc:"Te invitamos a conocer nuestras instalaciones y reunirte con nuestro equipo acadÃ©mico para resolver todas tus dudas." },
-  { n:3, title:"Entrega documentaciÃ³n",     desc:"ReÃºne los documentos requeridos y entrÃ©galos en nuestras oficinas de admisiones dentro del plazo establecido." },
-  { n:4, title:"EvaluaciÃ³n de ingreso",     desc:"Aplicamos una evaluaciÃ³n sencilla y diagnÃ³stica para conocer el nivel del alumno y asignar el grupo mÃ¡s adecuado." },
-  { n:5, title:"Formaliza tu inscripciÃ³n",  desc:"Una vez aceptado, realiza el pago de inscripciÃ³n y firma los documentos para asegurar el lugar de tu hijo." },
+  { n:1, title:"Solicita información",     desc:"Contáctanos por WhatsApp, teléfono o correo para conocer disponibilidad de lugares y requisitos del nivel que te interesa." },
+  { n:2, title:"Agenda una visita",        desc:"Te invitamos a conocer nuestras instalaciones y reunirte con nuestro equipo académico para resolver todas tus dudas." },
+  { n:3, title:"Entrega documentación",    desc:"Reúne los documentos requeridos y entrégalos en nuestras oficinas de admisiones dentro del plazo establecido." },
+  { n:4, title:"Evaluación de ingreso",    desc:"Aplicamos una evaluación sencilla y diagnóstica para conocer el nivel del alumno y asignar el grupo más adecuado." },
+  { n:5, title:"Formaliza tu inscripción", desc:"Una vez aceptado, realiza el pago de inscripción y firma los documentos para asegurar el lugar de tu hijo." },
 ];
 
 const DOCS = [
   "Acta de nacimiento (original y copia)",
   "CURP del alumno",
   "Certificado o constancia del grado anterior",
-  "Boleta de calificaciones del Ãºltimo aÃ±o",
-  "4 fotografÃ­as tamaÃ±o infantil en blanco y negro",
-  "Cartilla de vacunaciÃ³n (preescolar y primaria)",
-  "IdentificaciÃ³n oficial del tutor",
+  "Boleta de calificaciones del último año",
+  "4 fotografías tamaño infantil en blanco y negro",
+  "Cartilla de vacunación (preescolar y primaria)",
+  "Identificación oficial del tutor",
   "Comprobante de domicilio reciente",
 ];
 
@@ -34,13 +34,13 @@ function WAIcon({ size = 16 }: { size?: number }) {
 
 export default function Admisiones() {
   return (
-    <main>
+    <section>
       <section style={{ padding:"clamp(3.5rem,7vw,6rem) 0 clamp(2rem,4vw,3rem)", background:"radial-gradient(70% 80% at 50% -10%, rgba(224,48,63,.07), transparent 60%), var(--color-bg)" }}>
         <div className="wrap text-center" style={{ maxWidth:760, marginLeft:"auto", marginRight:"auto" }}>
           <div className="flex justify-center"><span className="eyebrow">Admisiones</span></div>
           <h1 className="font-display font-extrabold tracking-tight leading-[1.04] mt-[18px]"
             style={{ fontSize:"clamp(2.4rem,5.2vw,4rem)", color:"var(--text-strong)" }}>Inscripciones<br /><span style={{ color:"var(--color-primary)" }}>abiertas</span></h1>
-          <p className="mt-[18px] mx-auto leading-relaxed" style={{ fontSize:"clamp(1.05rem,1.6vw,1.2rem)", color:"var(--text-muted)", maxWidth:"36em" }}>AcompaÃ±amos a las familias en cada paso del proceso. ContÃ¡ctanos hoy y asegura el lugar de tu hijo en el Colegio Pedro de Gante.</p>
+          <p className="mt-[18px] mx-auto leading-relaxed" style={{ fontSize:"clamp(1.05rem,1.6vw,1.2rem)", color:"var(--text-muted)", maxWidth:"36em" }}>Acompañamos a las familias en cada paso del proceso. Contáctanos hoy y asegura el lugar de tu hijo en el Colegio Pedro de Gante.</p>
           <div className="flex flex-wrap justify-center gap-3 mt-8">
             <a href={WA} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp flex items-center gap-2"><WAIcon size={18} /> Solicitar informes</a>
             <AdmissionsPopup />
@@ -61,7 +61,7 @@ export default function Admisiones() {
                 <div className="absolute left-0 top-0 flex flex-col items-center">
                   <div className="grid h-10 w-10 place-items-center rounded-full font-display font-extrabold text-white text-sm shadow-md"
                     style={{ background:"var(--color-primary)" }}>{p.n}</div>
-                  {i < PASOS.length - 1 && <div className="w-px grow mt-1" style={{ background:"var(--line)", minHeight:40 }} />}
+                  {i < PASOS.length - 1 && <div className="w-px grow mt-1" style={{ background:"var(--border)", minHeight:40 }} />}
                 </div>
                 <h3 className="font-display font-bold mb-2" style={{ fontSize:"1.15rem", color:"var(--text-strong)" }}>{p.title}</h3>
                 <p className="text-[15px] leading-[1.65]" style={{ color:"var(--text-body)", maxWidth:"44em" }}>{p.desc}</p>
@@ -76,7 +76,7 @@ export default function Admisiones() {
         <div className="wrap grid gap-10 md:grid-cols-2 items-start">
           <div>
             <span className="eyebrow mb-4 block">Documentos requeridos</span>
-            <h2 className="font-display font-extrabold tracking-tight mb-6" style={{ fontSize:"clamp(1.7rem,3vw,2.3rem)", color:"var(--text-strong)" }}>Â¿QuÃ© necesitas traer?</h2>
+            <h2 className="font-display font-extrabold tracking-tight mb-6" style={{ fontSize:"clamp(1.7rem,3vw,2.3rem)", color:"var(--text-strong)" }}>¿Qué necesitas traer?</h2>
             <ul className="flex flex-col gap-3">
               {DOCS.map((d) => (
                 <li key={d} className="flex items-start gap-3 text-[15px]" style={{ color:"var(--text-body)" }}>
@@ -84,26 +84,26 @@ export default function Admisiones() {
                 </li>
               ))}
             </ul>
-            <p className="mt-5 text-[13.5px]" style={{ color:"var(--text-muted)" }}>* Los requisitos pueden variar segÃºn el nivel. Consulta con admisiones.</p>
+            <p className="mt-5 text-[13.5px]" style={{ color:"var(--text-muted)" }}>* Los requisitos pueden variar según el nivel. Consulta con admisiones.</p>
           </div>
-          <div className="rounded-[var(--radius-lg)] p-8 border" style={{ background:"var(--surface-card)", borderColor:"var(--line-sm)" }}>
+          <div className="rounded-[var(--radius-lg)] p-8 border" style={{ background:"var(--color-surface)", borderColor:"var(--ink-200)" }}>
             <span className="eyebrow mb-4 block">Contacto directo</span>
-            <h3 className="font-display font-bold mb-6" style={{ fontSize:"1.3rem", color:"var(--text-strong)" }}>Â¿Tienes dudas? Estamos aquÃ­.</h3>
+            <h3 className="font-display font-bold mb-6" style={{ fontSize:"1.3rem", color:"var(--text-strong)" }}>¿Tienes dudas? Estamos aquí.</h3>
             <div className="flex flex-col gap-4 mb-8">
-              <div><div className="text-[11px] font-bold tracking-wider uppercase mb-1" style={{ color:"var(--text-muted)" }}>TelÃ©fono</div>
+              <div><div className="text-[11px] font-bold tracking-wider uppercase mb-1" style={{ color:"var(--text-muted)" }}>Teléfono</div>
                 <a href={`tel:${PHONE.replace(/\s/g,"")}`} className="font-display font-semibold" style={{ fontSize:"1.15rem", color:"var(--text-strong)" }}>{PHONE}</a></div>
               <div><div className="text-[11px] font-bold tracking-wider uppercase mb-1" style={{ color:"var(--text-muted)" }}>Correo</div>
                 <a href={`mailto:${EMAIL}`} className="font-display font-semibold" style={{ fontSize:"1.15rem", color:"var(--text-strong)" }}>{EMAIL}</a></div>
               <div><div className="text-[11px] font-bold tracking-wider uppercase mb-1" style={{ color:"var(--text-muted)" }}>Horario de oficina</div>
-                <p className="text-[15px]" style={{ color:"var(--text-body)" }}>Lunes a viernes, 8:00 â 15:00 hrs<br />SÃ¡bados, 9:00 â 12:00 hrs</p></div>
+                <p className="text-[15px]" style={{ color:"var(--text-body)" }}>Lunes a viernes, 8:00 – 15:00 hrs<br />Sábados, 9:00 – 12:00 hrs</p></div>
             </div>
             <a href={WA} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp w-full justify-center flex items-center gap-2"><WAIcon size={16} /> Escribir por WhatsApp</a>
           </div>
         </div>
       </section>
 
-      <CtaBand title="Â¡Asegura el lugar de tu hijo!" sub="Los cupos son limitados. ContÃ¡ctanos hoy para reservar tu lugar."
+      <CtaBand title="¡Asegura el lugar de tu hijo!" sub="Los cupos son limitados. Contáctanos hoy para reservar tu lugar."
         href={WA} label="Iniciar proceso" secondaryLabel="Visitar el colegio" secondaryHref="/contacto" />
-    </main>
+    </section>
   );
 }
