@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 };
 
 const NIVELES = [
-  { id:"preescolar", accent:"var(--level-preescolar)", tint:"var(--level-preescolar-tint)", idx:1, age:"Primeros pasos",    title:"Preescolar",   tagline:"Los primeros pasos, con cariÃ±o y juego.",            desc:"Estimulamos el desarrollo integral de los mÃ¡s pequeÃ±os en un ambiente seguro y afectuoso, donde aprenden jugando y descubren el gusto por aprender.", features:["EstimulaciÃ³n temprana y psicomotricidad","IniciaciÃ³n al inglÃ©s","Desarrollo socioemocional y valores"] },
-  { id:"primaria",   accent:"var(--level-primaria)",   tint:"var(--level-primaria-tint)",   idx:2, age:"Bases sÃ³lidas",     title:"Primaria",     tagline:"Bases sÃ³lidas para toda la vida.",                    desc:"Consolidamos las competencias fundamentales en lectura, escritura y matemÃ¡ticas, junto con hÃ¡bitos de estudio y convivencia sana.",                  features:["ComprensiÃ³n lectora y razonamiento","InglÃ©s y tecnologÃ­a","FormaciÃ³n en valores y deporte"] },
-  { id:"secundaria", accent:"var(--level-secundaria)", tint:"var(--level-secundaria-tint)", idx:3, age:"Pensar y crecer",  title:"Secundaria",   tagline:"Pensar, decidir y crecer.",                           desc:"AcompaÃ±amos la etapa de mayor cambio con disciplina positiva, pensamiento crÃ­tico y orientaciÃ³n, preparando a los alumnos para el bachillerato.",   features:["Pensamiento crÃ­tico y mÃ©todo de estudio","OrientaciÃ³n y tutorÃ­a","Actividades deportivas y culturales"] },
-  { id:"preparatoria",accent:"var(--level-prepa)",    tint:"var(--level-prepa-tint)",      idx:4, age:"Pase a universidad",title:"Preparatoria", tagline:"Pase directo a las mejores universidades.",           desc:"Preparamos a los jÃ³venes para el Ã©xito universitario con un programa exigente, orientaciÃ³n vocacional y preparaciÃ³n para el examen de admisiÃ³n.",   features:["PreparaciÃ³n para examen de admisiÃ³n","OrientaciÃ³n vocacional","Validez oficial SEP"] },
+  { id:"preescolar",  accent:"var(--level-preescolar)", tint:"var(--level-preescolar-tint)", idx:1, age:"Primeros pasos",    title:"Preescolar",   tagline:"Los primeros pasos, con cariño y juego.",            desc:"Estimulamos el desarrollo integral de los más pequeños en un ambiente seguro y afectuoso, donde aprenden jugando y descubren el gusto por aprender.", features:["Estimulación temprana y psicomotricidad","Iniciación al inglés","Desarrollo socioemocional y valores"] },
+  { id:"primaria",    accent:"var(--level-primaria)",   tint:"var(--level-primaria-tint)",   idx:2, age:"Bases sólidas",     title:"Primaria",     tagline:"Bases sólidas para toda la vida.",                   desc:"Consolidamos las competencias fundamentales en lectura, escritura y matemáticas, junto con hábitos de estudio y convivencia sana.", features:["Comprensión lectora y razonamiento","Inglés y tecnología","Formación en valores y deporte"] },
+  { id:"secundaria",  accent:"var(--level-secundaria)", tint:"var(--level-secundaria-tint)", idx:3, age:"Pensar y crecer",   title:"Secundaria",   tagline:"Pensar, decidir y crecer.",                          desc:"Acompañamos la etapa de mayor cambio con disciplina positiva, pensamiento crítico y orientación, preparando a los alumnos para el bachillerato.", features:["Pensamiento crítico y método de estudio","Orientación y tutoría","Actividades deportivas y culturales"] },
+  { id:"preparatoria",accent:"var(--level-prepa)",     tint:"var(--level-prepa-tint)",      idx:4, age:"Pase a universidad",title:"Preparatoria", tagline:"Pase directo a las mejores universidades.",          desc:"Preparamos a los jóvenes para el éxito universitario con un programa exigente, orientación vocacional y preparación para el examen de admisión.", features:["Preparación para examen de admisión","Orientación vocacional","Validez oficial SEP"] },
 ];
 
 function WAIcon({ size = 16 }: { size?: number }) {
@@ -21,13 +21,13 @@ function WAIcon({ size = 16 }: { size?: number }) {
 
 export default function Niveles() {
   return (
-    <main>
+    <section>
       <section style={{ padding:"clamp(3rem,6vw,5rem) 0 clamp(2rem,4vw,3rem)", background:"radial-gradient(70% 80% at 50% -10%, rgba(224,48,63,.07), transparent 60%), var(--color-bg)" }}>
         <div className="wrap text-center" style={{ maxWidth:780, marginLeft:"auto", marginRight:"auto" }}>
           <div className="flex justify-center"><span className="eyebrow">Niveles educativos</span></div>
           <h1 className="font-display font-extrabold tracking-tight leading-[1.04] mt-[18px]"
             style={{ fontSize:"clamp(2.4rem,5.2vw,4rem)", color:"var(--text-strong)" }}>Un camino completo,<br />de preescolar a prepa</h1>
-          <p className="mt-[18px] mx-auto leading-relaxed" style={{ fontSize:"clamp(1.05rem,1.6vw,1.25rem)", color:"var(--text-muted)", maxWidth:"38em" }}>Un solo proyecto educativo que acompaÃ±a a tu hijo en cada etapa, con la misma identidad y los mismos valores.</p>
+          <p className="mt-[18px] mx-auto leading-relaxed" style={{ fontSize:"clamp(1.05rem,1.6vw,1.25rem)", color:"var(--text-muted)", maxWidth:"38em" }}>Un solo proyecto educativo que acompaña a tu hijo en cada etapa, con la misma identidad y los mismos valores.</p>
         </div>
       </section>
 
@@ -68,8 +68,8 @@ export default function Niveles() {
         </div>
       </section>
 
-      <CtaBand title="Â¿Listo para conocer el colegio?" sub="Solicita informes del nivel que te interesa y agenda una visita guiada."
+      <CtaBand title="¿Listo para conocer el colegio?" sub="Solicita informes del nivel que te interesa y agenda una visita guiada."
         href={WA} label="Solicitar informes" secondaryLabel="Ver admisiones" secondaryHref="/admisiones" />
-    </main>
+    </section>
   );
 }
