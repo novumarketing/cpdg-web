@@ -8,21 +8,21 @@ function WAIcon({ size = 18 }: { size?: number }) {
 }
 
 const NIVELES = [
-  { key:"preescolar", accent:"var(--level-preescolar)", tint:"var(--level-preescolar-tint)", idx:1, age:"Primeros pasos", title:"Preescolar", tagline:"Los primeros pasos, con cariÃ±o y juego.", features:["EstimulaciÃ³n temprana y psicomotricidad","IniciaciÃ³n al inglÃ©s"] },
-  { key:"primaria",   accent:"var(--level-primaria)",   tint:"var(--level-primaria-tint)",   idx:2, age:"Bases sÃ³lidas",      title:"Primaria",    tagline:"Bases sÃ³lidas para toda la vida.",           features:["ComprensiÃ³n lectora y razonamiento","InglÃ©s y tecnologÃ­a"] },
-  { key:"secundaria", accent:"var(--level-secundaria)", tint:"var(--level-secundaria-tint)", idx:3, age:"Pensar y crecer",   title:"Secundaria",  tagline:"Pensar, decidir y crecer.",                  features:["Pensamiento crÃ­tico y mÃ©todo de estudio","OrientaciÃ³n y tutorÃ­a"] },
-  { key:"preparatoria",accent:"var(--level-prepa)",    tint:"var(--level-prepa-tint)",      idx:4, age:"Pase a universidad", title:"Preparatoria",tagline:"Pase directo a las mejores universidades.",  features:["PreparaciÃ³n para examen de admisiÃ³n","OrientaciÃ³n vocacional"] },
+  { key:"preescolar", accent:"var(--level-preescolar)", tint:"var(--level-preescolar-tint)", idx:1, age:"Primeros pasos", title:"Preescolar", tagline:"Los primeros pasos, con cariño y juego.", features:["Estimulación temprana y psicomotricidad","Iniciación al inglés"] },
+  { key:"primaria",   accent:"var(--level-primaria)",   tint:"var(--level-primaria-tint)",   idx:2, age:"Bases sólidas",  title:"Primaria",    tagline:"Bases sólidas para toda la vida.",    features:["Comprensión lectora y razonamiento","Inglés y tecnología"] },
+  { key:"secundaria", accent:"var(--level-secundaria)", tint:"var(--level-secundaria-tint)", idx:3, age:"Pensar y crecer",title:"Secundaria",  tagline:"Pensar, decidir y crecer.",           features:["Pensamiento crítico y método de estudio","Orientación y tutoría"] },
+  { key:"preparatoria",accent:"var(--level-prepa)",    tint:"var(--level-prepa-tint)",      idx:4, age:"Pase a universidad",title:"Preparatoria",tagline:"Pase directo a las mejores universidades.", features:["Preparación para examen de admisión","Orientación vocacional"] },
 ];
 
 const PILARES = [
-  { emoji:"ð", title:"Excelencia acadÃ©mica", desc:"Un modelo exigente que prepara a cada alumno para el siguiente nivel y la universidad." },
-  { emoji:"ð¤", title:"FormaciÃ³n en valores",  desc:"EducaciÃ³n integral con acompaÃ±amiento pastoral que forma personas Ã­ntegras." },
-  { emoji:"ð¥", title:"Comunidad #SoyPdG",     desc:"Una familia que acompaÃ±a a sus alumnos dentro y fuera del aula, de por vida." },
+  { emoji:"🏆", title:"Excelencia académica", desc:"Un modelo exigente que prepara a cada alumno para el siguiente nivel y la universidad." },
+  { emoji:"🤝", title:"Formación en valores",  desc:"Educación integral con acompañamiento pastoral que forma personas íntegras." },
+  { emoji:"🏅", title:"Comunidad #SoyPdG",     desc:"Una familia que acompaña a sus alumnos dentro y fuera del aula, de por vida." },
 ];
 
 export default function Home() {
   return (
-    <main>
+    <section>
       {/* HERO */}
       <section style={{ position:"relative", overflow:"hidden", padding:"clamp(2.5rem,6vw,5.5rem) 0 clamp(3rem,7vw,6rem)", background:"radial-gradient(60% 70% at 88% 8%, rgba(224,48,63,.08), transparent 60%), radial-gradient(50% 60% at 6% 90%, rgba(224,48,63,.05), transparent 60%), var(--color-bg)" }}>
         <div className="wrap grid items-center gap-[clamp(2rem,5vw,5rem)] md:grid-cols-[1.05fr_.95fr]">
@@ -30,7 +30,7 @@ export default function Home() {
             <div className="fade-up inline-flex items-center gap-[9px] rounded-full bg-white px-4 py-2 text-[13px] font-semibold"
               style={{ color:"var(--color-primary)", border:"1px solid var(--color-primary-border)", boxShadow:"var(--shadow-xs)" }}>
               <span className="h-2 w-2 rounded-full" style={{ background:"var(--color-primary)", boxShadow:"0 0 0 4px var(--color-primary-tint)" }} />
-              EducaciÃ³n con valores Â· Tulancingo, Hidalgo
+              Educación con valores · Tulancingo, Hidalgo
             </div>
             <h1 className="fade-up-1 font-display font-extrabold leading-[1.02] tracking-tight mt-[22px]"
               style={{ fontSize:"clamp(2.6rem,6vw,4.6rem)", color:"var(--text-strong)" }}>
@@ -40,7 +40,7 @@ export default function Home() {
             </h1>
             <p className="fade-up-2 leading-relaxed mt-[22px]"
               style={{ fontSize:"clamp(1.05rem,1.6vw,1.3rem)", color:"var(--text-body)", maxWidth:"30em" }}>
-              En el Colegio Pedro de Gante formamos personas Ã­ntegras y preparadas, de preescolar a preparatoria, con excelencia acadÃ©mica y una sÃ³lida formaciÃ³n en valores.
+              En el Colegio Pedro de Gante formamos personas íntegras y preparadas, de preescolar a preparatoria, con excelencia académica y una sólida formación en valores.
             </p>
             <div className="fade-up-3 flex flex-wrap gap-3.5 mt-[30px]">
               <a href={WA} target="_blank" rel="noopener noreferrer" className="btn btn-whatsapp btn-lg"><WAIcon /> Solicitar informes</a>
@@ -62,13 +62,13 @@ export default function Home() {
                 <div className="mx-auto mb-4 grid h-20 w-20 place-items-center rounded-full font-display text-4xl font-extrabold text-white"
                   style={{ background:"linear-gradient(135deg,var(--red-600),var(--red-800))" }}>P</div>
                 <div className="font-display text-2xl font-bold" style={{ color:"var(--text-strong)" }}>Colegio Pedro de Gante</div>
-                <div className="mt-1 text-sm" style={{ color:"var(--text-muted)" }}>#SoyPdG Â· Comunidad de por vida</div>
+                <div className="mt-1 text-sm" style={{ color:"var(--text-muted)" }}>#SoyPdG · Comunidad de por vida</div>
               </div>
             </div>
             <div className="absolute -left-4 bottom-7 rounded-[var(--radius-md)] bg-white p-4 flex flex-col gap-0.5 shadow-lg" style={{ minWidth:180 }}>
               <span className="font-display font-extrabold text-[18px]" style={{ color:"var(--color-primary)" }}>#SoyPdG</span>
               <strong className="text-[15px]" style={{ color:"var(--text-strong)" }}>Comunidad de por vida</strong>
-              <span className="text-[12.5px]" style={{ color:"var(--text-muted)" }}>desde el corazÃ³n de Tulancingo</span>
+              <span className="text-[12.5px]" style={{ color:"var(--text-muted)" }}>desde el corazón de Tulancingo</span>
             </div>
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function Home() {
       <section style={{ padding:"var(--section-y) 0" }}>
         <div className="wrap">
           <SectionHead kicker="Modelo educativo" title="Un camino completo, de preescolar a prepa"
-            sub="AcompaÃ±amos a tu hijo en cada etapa con un proyecto educativo coherente y centrado en la persona." />
+            sub="Acompañamos a tu hijo en cada etapa con un proyecto educativo coherente y centrado en la persona." />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {NIVELES.map((n) => (
               <Link key={n.key} href={`/niveles#${n.key}`}
@@ -101,7 +101,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <span className="text-[13.5px] font-semibold" style={{ color:n.accent }}>Conocer mÃ¡s â</span>
+                <span className="text-[13.5px] font-semibold" style={{ color:n.accent }}>Conocer más →</span>
               </Link>
             ))}
           </div>
@@ -111,11 +111,11 @@ export default function Home() {
       {/* PILARES */}
       <section style={{ background:"var(--ink-900)", padding:"var(--section-y) 0" }}>
         <div className="wrap">
-          <SectionHead light kicker="Por quÃ© Pedro de Gante" title="Formamos para la vida, no solo para el examen" sub="Tres pilares que distinguen nuestra propuesta educativa." />
+          <SectionHead light kicker="Por qué Pedro de Gante" title="Formamos para la vida, no solo para el examen" sub="Tres pilares que distinguen nuestra propuesta educativa." />
           <div className="grid gap-6 md:grid-cols-3">
             {PILARES.map((p) => (
               <div key={p.title} className="rounded-[var(--radius-lg)] p-8" style={{ background:"rgba(255,255,255,.05)", border:"1px solid var(--border-on-dark)" }}>
-                <div className="text-4xl mb-5">{p.emoji}</div>
+                <div className="text-4xl mb-5" aria-hidden>{p.emoji}</div>
                 <h3 className="font-display text-[19px] font-bold text-white mb-2">{p.title}</h3>
                 <p className="text-[14.5px] leading-relaxed" style={{ color:"var(--text-on-dark-muted)" }}>{p.desc}</p>
               </div>
@@ -130,8 +130,8 @@ export default function Home() {
       </section>
 
       <CtaBand title="Vive la experiencia Pedro de Gante"
-        sub="Agenda una visita guiada y conoce por quÃ© somos una familia educativa desde hace generaciones."
+        sub="Agenda una visita guiada y conoce por qué somos una familia educativa desde hace generaciones."
         href={WA_VISITA} label="Agendar una visita" secondaryLabel="Ir a contacto" secondaryHref="/contacto" />
-    </main>
+    </section>
   );
 }
